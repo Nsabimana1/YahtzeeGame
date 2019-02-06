@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/single_player_mode"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Single Player Mode" />
+        <item
+            android:id="@+id/two_player_mode"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="Two Player Mode" />
+
+        <item
+            android:id="@+id/replay_game"
+            android:icon="@drawable/ic_replay_black_24dp"
+            android:title="Replay Game" />
+        <item
+            android:id="@+id/exit_app"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Exit App" />
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>
