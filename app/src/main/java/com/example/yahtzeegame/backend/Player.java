@@ -62,12 +62,14 @@ public class Player {
         this.allscoreButtons.add(new ScoreButton(scoreButton, category));
     }
 
+    public ScoreValues getScoreValues(){
+        return this.scoreValues;
+    }
 
     public void displayResult(){
         this.scoreValues.calculateScore(this.allDices);
         this.scoreValues.assignCategoryValues();
         HashMap<ScoreCategory, Integer> categoryIntegerHashMap = this.scoreValues.getCategoryToValueMap();
-
         this.assignTotalScores();
 
         for(ScoreButton b: this.allscoreButtons) {
@@ -105,7 +107,7 @@ public class Player {
         this.bonusScore = scoreValues.getBonusScore();
         this.totalScore = scoreValues.getTotalScore();
     }
-    
+
     public void addSelectedDice(Dice dice){
         this.selectedDices.add(dice);
     }

@@ -117,6 +117,21 @@ public class homepageactivity extends AppCompatActivity
             player1.setBonusView(p1bonusView);
             player1.setTotalScoreView(p1totalScoreView);
 
+            p2AcesScoreButton.setEnabled(false);
+            p2TwosScoreButton.setEnabled(false);
+            p2ThreesScoreButton.setEnabled(false);
+            p2FoursScoreButton.setEnabled(false);
+            p2FivesScoreButton.setEnabled(false);
+            p2SixesScoreButton.setEnabled(false);
+
+            p2FullHouseScoreButton.setEnabled(false);
+            P2ThreeOFaKindScoreButton.setEnabled(false);
+            p2FourOfaKindScoreButton.setEnabled(false);
+            p2ChanceScoreButton.setEnabled(false);
+            P2YahzteeScoreButton.setEnabled(false);
+            p2lgStraightScoreButton.setEnabled(false);
+            p2smStraightScoreButton.setEnabled(false);
+
             Log.i(homepageactivity.class.getName(), "One player");
         }else{
             game.initializePlayers(2);

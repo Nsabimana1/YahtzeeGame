@@ -26,11 +26,15 @@ public class Game {
                 d.Roll();
             }
         }
+        this.currentPlayer.getScoreValues().calculateScore(this.alldices);
         this.currentPlayer.displayResult();
     }
 
     public void setInitialPlayer() {
         this.currentPlayer = this.players.get(0);
+        if(players.size() > 1){
+            this.disactativateCoreButton(players.get(1));
+        }
     }
 
     public void switchPlayer(){
@@ -39,9 +43,25 @@ public class Game {
         }else {
             if(this.currentPlayer.equals(players.get(0))) {
                 this.currentPlayer = players.get(1);
+                this.activaTeScorebuttons(players.get(1));
+                this.disactativateCoreButton(players.get(0));
             } else {
                 this.currentPlayer = players.get(0);
+                this.activaTeScorebuttons(players.get(0));
+                this.disactativateCoreButton(players.get(1));
             }
+        }
+    }
+
+    public void disactativateCoreButton(Player player){
+        for(ScoreButton b: player.getAllScoreButtons()){
+            b.getButton().setEnabled(false);
+        }
+    }
+
+    public void activaTeScorebuttons(Player player){
+        for(ScoreButton b: player.getAllScoreButtons()){
+            b.getButton().setEnabled(true);
         }
     }
 

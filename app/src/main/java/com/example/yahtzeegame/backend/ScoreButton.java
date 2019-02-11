@@ -37,5 +37,7 @@ public class ScoreButton {
 
     public void resetScoreButton(){
         this.isScored = false;
+        this.button.setBackgroundColor(0xFFFFFFFF);
+        this.button.setText("0");
     }
 }
