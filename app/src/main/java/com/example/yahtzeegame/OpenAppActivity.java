@@ -18,10 +18,7 @@ public class OpenAppActivity extends AppCompatActivity {
     Button proceed;
     public static String selectedbutton;
 
-
-    public boolean playerChoiceIsselected(){
-        return !selectedbutton.equals("");
-    }
+    public final static String selectedKey = "SELECTED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +27,7 @@ public class OpenAppActivity extends AppCompatActivity {
 
         radioGroup = findViewById(R.id.radiogroup);
 //        radioButton = findViewById(R.id.radioButton);
-        proceed = findViewById(R.id.proceede);
+        proceed = findViewById(R.id.proceed);
         selectedbutton = "";
 
         proceed.setOnClickListener(new View.OnClickListener() {
@@ -39,22 +36,10 @@ public class OpenAppActivity extends AppCompatActivity {
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 radioButton = findViewById(radioId);
                 selectedbutton = radioButton.getText().toString();
-
-                if(playerChoiceIsselected()){
-                    Intent proceed_to_mainpage_intent = new Intent(OpenAppActivity.this, homepageactivity.class);
-                    startActivity(proceed_to_mainpage_intent);
-                    finish();
-                }else{
-
-//                    Intent proceed_to_mainpage_intent = new Intent(OpenAppActivity.this, OpenAppActivity.class);
-//                    startActivity(proceed_to_mainpage_intent);
-                    Context context = getApplicationContext();
-                    CharSequence text = "Please Select Player Number Option!!";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-
+                Intent proceed_to_mainpage_intent = new Intent(OpenAppActivity.this, homepageactivity.class);
+                proceed_to_mainpage_intent.putExtra(selectedKey, selectedbutton);
+                startActivity(proceed_to_mainpage_intent);
+                finish();
             }
         });
     }

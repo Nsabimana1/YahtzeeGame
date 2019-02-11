@@ -20,8 +20,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include
-        android:id="@+id/p1_aces"
-        layout="@layout/content_homepageactivity" />
+    <include layout="@layout/content_homepageactivity" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -51,6 +51,7 @@
             android:layout_width="154dp"
             android:layout_height="48dp"
             android:layout_weight="1"
+            android:checked="true"
             android:text="Single Player"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -66,7 +67,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/proceede"
+        android:id="@+id/proceed"
         android:layout_width="167dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"

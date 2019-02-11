@@ -1,11 +1,11 @@
 package com.example.yahtzeegame.backend;
 
 public enum ScoreCategory {
-    Ones, Twos, Threes, Fours, Fives, Sixes, Three_of_a_kind, Four_of_a_kind, Full_House, SM_Straight, LG_Straight, Yahtzee;
+    Aces, Twos, Threes, Fours, Fives, Sixes, Three_of_a_kind, Four_of_a_kind, Full_House, SM_Straight, LG_Straight, Chance, Yahtzee;
     public static int getCategoryValue(ScoreCategory category){
         int categoryValue = 0;
         switch (category){
-            case Ones:
+            case Aces:
                 categoryValue = 1;
                 break;
             case Twos:

@@ -1,5 +1,6 @@
 package com.example.yahtzeegame.backend;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.widget.Button;
 
@@ -12,6 +13,11 @@ public class Dice {
         this.value = 1;
         this.selected = false;
         this.buttonDice = buttonDice;
+    }
+
+    public Dice(Integer value) {
+        this.value = value;
+
     }
 
     public void Roll(){
@@ -28,8 +34,10 @@ public class Dice {
         this.selected = true;
     }
 
-    public void unselectDice(){
-        this.buttonDice.setBackgroundColor(0x00000000);
+        public void resetDice(){
+        this.buttonDice.setBackgroundColor(0xFFFFFFFF);
+        this.value = 0;
+        this.buttonDice.setText("0");
         this.selected = false;
     }
 

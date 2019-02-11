@@ -8,7 +8,7 @@
     tools:context=".homepageactivity"
     tools:showIn="@layout/app_bar_homepageactivity">
 
-    <RelativeLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.4"
@@ -20,9 +20,9 @@
             android:layout_width="176dp"
             android:layout_height="96dp"
             android:layout_marginStart="11dp"
-            android:layout_marginTop="366dp"
+            android:layout_marginTop="401dp"
             android:layout_marginEnd="19dp"
-            android:layout_marginBottom="213dp"
+            android:layout_marginBottom="178dp"
             android:text="Roll Dice"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -31,30 +31,30 @@
             android:id="@+id/dice1"
             android:layout_width="78dp"
             android:layout_height="60dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="75dp"
-            android:layout_marginEnd="120dp"
-            android:layout_marginBottom="552dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="110dp"
+            android:layout_marginBottom="542dp"
             android:text="0" />
 
         <Button
             android:id="@+id/dice2"
             android:layout_width="78dp"
             android:layout_height="60dp"
-            android:layout_marginStart="107dp"
-            android:layout_marginTop="73dp"
+            android:layout_marginStart="111dp"
+            android:layout_marginTop="74dp"
             android:layout_marginEnd="18dp"
-            android:layout_marginBottom="552dp"
+            android:layout_marginBottom="539dp"
             android:text="0" />
 
         <Button
             android:id="@+id/dice3"
             android:layout_width="78dp"
             android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="130dp"
-            android:layout_marginEnd="126dp"
-            android:layout_marginBottom="497dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="154dp"
+            android:layout_marginEnd="69dp"
+            android:layout_marginBottom="460dp"
             android:text="0" />
 
         <!--<Button-->
@@ -73,33 +73,23 @@
             android:id="@+id/dice5"
             android:layout_width="78dp"
             android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="194dp"
-            android:layout_marginEnd="124dp"
-            android:layout_marginBottom="433dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="229dp"
+            android:layout_marginEnd="119dp"
+            android:layout_marginBottom="376dp"
             android:text="0" />
 
         <Button
             android:id="@+id/dice4"
             android:layout_width="78dp"
             android:layout_height="60dp"
-            android:layout_marginStart="109dp"
-            android:layout_marginTop="134dp"
-            android:layout_marginEnd="17dp"
-            android:layout_marginBottom="493dp"
+            android:layout_marginStart="116dp"
+            android:layout_marginTop="231dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="377dp"
             android:text="0" />
 
-        <Button
-            android:id="@+id/dice6"
-            android:layout_width="78dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="196dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginBottom="431dp"
-            android:text="0" />
-
-    </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -160,13 +150,13 @@
 
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/p1__aces"
                     android:layout_width="65dp"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button11"
+                    android:id="@+id/p2_aces"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -185,13 +175,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/p1_twos"
                     android:layout_width="56dp"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/p2_twos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -210,13 +200,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/p1_threes"
                     android:layout_width="67dp"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button8"
+                    android:id="@+id/p2_threes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -235,13 +225,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button9"
+                    android:id="@+id/p1_fours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button10"
+                    android:id="@+id/p2_fours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -261,13 +251,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button20"
+                    android:id="@+id/p1_fives"
                     android:layout_width="45dp"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button21"
+                    android:id="@+id/p2_fives"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -287,13 +277,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button22"
+                    android:id="@+id/p1_sixes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button23"
+                    android:id="@+id/p2_sixes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -314,7 +304,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView19"
+                    android:id="@+id/p1_initial_sum"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:padding="7dp"
@@ -322,7 +312,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/p2_initial_sum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
@@ -345,7 +335,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/p1_bonus_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
@@ -353,7 +343,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/p2_bonus_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
@@ -375,13 +365,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button24"
+                    android:id="@+id/p1_3_of_a_kind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button25"
+                    android:id="@+id/p2_3_of_a_kind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -401,13 +391,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button26"
+                    android:id="@+id/p1_4_of_a_kind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button27"
+                    android:id="@+id/p2_4_of_a_kind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -427,13 +417,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button28"
+                    android:id="@+id/p1_fullhouse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button29"
+                    android:id="@+id/p2_fullhouse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -453,13 +443,13 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button30"
+                    android:id="@+id/p1_sm_straight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button31"
+                    android:id="@+id/p2_sm_straight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
@@ -479,16 +469,42 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button32"
+                    android:id="@+id/p1_lg_straight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button33"
+                    android:id="@+id/p2_lg_straight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/Chance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:padding="2dp"
+                    android:text="Chance" />
+
+                <Button
+                    android:id="@+id/p1_chance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/p2_chance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
             </TableRow>
 
             <TableRow
@@ -505,17 +521,44 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button34"
+                    android:id="@+id/p1_yahtzee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0" />
 
                 <Button
-                    android:id="@+id/button35"
+                    android:id="@+id/p2_yahtzee"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="0" />
             </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:textSize="16dp"
+                    android:text="Total Score" />
+
+                <TextView
+                    android:id="@+id/p1_total_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/p2_total_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+            </TableRow>
+
         </TableLayout>
 
     </RelativeLayout>
