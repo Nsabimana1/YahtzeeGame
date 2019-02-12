@@ -44,6 +44,10 @@ public class Dice {
         this.buttonDice.setEnabled(false);
     }
 
+    public void activateDice(){
+        this.buttonDice.setEnabled(true);
+    }
+
     public boolean isSelected(){
         return this.selected == true;
     }

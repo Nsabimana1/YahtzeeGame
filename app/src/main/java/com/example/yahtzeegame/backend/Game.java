@@ -17,6 +17,7 @@ public class Game {
     }
 
     public void roll(){
+        this.activateAllDices();
         for(Dice d:alldices){
             if(!d.isSelected()){
                 d.Roll();
@@ -28,6 +29,7 @@ public class Game {
     }
 
     public void setInitialPlayer() {
+        this.disActivateAllDices();
         this.currentPlayer = this.players.get(0);
         for(Player p: this.players){
             this.disactivateScoreButtons(p);
@@ -35,10 +37,10 @@ public class Game {
     }
 
     public void switchPlayer(){
+        this.disActivateAllDices();
         if (players.size() == 1){
             this.currentPlayer = players.get(0);
             this.disactivateScoreButtons(this.currentPlayer);
-//            this.currentPlayer.displayResult();
         }else {
             if(this.currentPlayer.equals(players.get(0))) {
                 this.currentPlayer = players.get(1);
@@ -113,6 +115,18 @@ public class Game {
             }
         }
         return toreturn;
+    }
+
+    public void activateAllDices(){
+        for(Dice d: this.alldices){
+            d.activateDice();
+        }
+    }
+
+    public void disActivateAllDices(){
+        for(Dice d: this.alldices){
+            d.disActivateDice();
+        }
     }
 
     public void restAllScoreButtons(){
