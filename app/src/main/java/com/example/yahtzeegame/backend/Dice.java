@@ -10,7 +10,7 @@ public class Dice {
     private Button buttonDice;
 
     public Dice(Button buttonDice){
-        this.value = 1;
+        this.value = 0;
         this.selected = false;
         this.buttonDice = buttonDice;
     }

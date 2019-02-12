@@ -13,13 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yahtzeegame.backend.*;
 
-import java.security.PrivateKey;
 import java.util.ArrayList;
 
 public class homepageactivity extends AppCompatActivity
@@ -29,7 +27,7 @@ public class homepageactivity extends AppCompatActivity
     private Button roll;
     private Game game = new Game();
     private String selectedButton;
-    private Integer nkeptButtons = 0;
+    private Integer nRollTurns = 0;
 
 
     @Override
@@ -188,9 +186,9 @@ public class homepageactivity extends AppCompatActivity
         roll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nkeptButtons < 2) {
+                if (nRollTurns < 2) {
                     game.roll();
-                    nkeptButtons += 1;
+                    nRollTurns += 1;
                 }else {
                     displayToast("You have reached the maximum number of rolls. You have to choose the score now");
                     roll.setEnabled(false);
@@ -220,7 +218,7 @@ public class homepageactivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 game.resetAllDices();
-                nkeptButtons = 0;
+                nRollTurns = 0;
                 game.resetAllDices();
                 if(!game.getCurrntScoreButton((Button)v).isScored()){
 
@@ -316,13 +314,13 @@ public class homepageactivity extends AppCompatActivity
         } else if (id == R.id.two_player_mode) {
             game.deleteAllPlayers();
             game.initializePlayers(2);
-//            game.addPlayer(new Player());
-//            game.addPlayer(new Player());
+
 
         } else if (id == R.id.replay_game) {
             game.resetAllDices();
             game.restAllScoreButtons();
             roll.setEnabled(true);
+            this.nRollTurns = 0;
 
 
         } else if (id == R.id.exit_app) {

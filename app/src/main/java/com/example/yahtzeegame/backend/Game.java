@@ -16,10 +16,6 @@ public class Game {
         alldices.add(new Dice(dice));
     }
 
-//    public void addPlayer(Player p) {
-//        players.add(p);
-//    }
-
     public void roll(){
         for(Dice d:alldices){
             if(!d.isSelected()){
@@ -33,35 +29,40 @@ public class Game {
     public void setInitialPlayer() {
         this.currentPlayer = this.players.get(0);
         if(players.size() > 1){
-            this.disactativateCoreButton(players.get(1));
+            this.disactivateScoreButtons(players.get(1));
         }
     }
 
     public void switchPlayer(){
         if (players.size() == 1){
             this.currentPlayer = players.get(0);
+            this.currentPlayer.displayResult();
         }else {
             if(this.currentPlayer.equals(players.get(0))) {
                 this.currentPlayer = players.get(1);
-                this.activaTeScorebuttons(players.get(1));
-                this.disactativateCoreButton(players.get(0));
+                this.activateScoreButtons(players.get(1));
+                this.disactivateScoreButtons(players.get(0));
+                this.currentPlayer.displayResult();
             } else {
                 this.currentPlayer = players.get(0);
-                this.activaTeScorebuttons(players.get(0));
-                this.disactativateCoreButton(players.get(1));
+                this.activateScoreButtons(players.get(0));
+                this.disactivateScoreButtons(players.get(1));
+                this.currentPlayer.displayResult();
             }
         }
     }
 
-    public void disactativateCoreButton(Player player){
+    public void disactivateScoreButtons(Player player){
         for(ScoreButton b: player.getAllScoreButtons()){
             b.getButton().setEnabled(false);
         }
     }
 
-    public void activaTeScorebuttons(Player player){
+    public void activateScoreButtons(Player player){
         for(ScoreButton b: player.getAllScoreButtons()){
-            b.getButton().setEnabled(true);
+            if(!b.isScored()) {
+                b.getButton().setEnabled(true);
+            }
         }
     }
 

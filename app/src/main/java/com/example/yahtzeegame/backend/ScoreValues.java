@@ -1,5 +1,6 @@
 package com.example.yahtzeegame.backend;
 
+import android.util.Log;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -94,11 +95,13 @@ public class ScoreValues {
            this.categoryToValue.put(ScoreCategory.Chance, this.ScoreAChance());
        }
        if(!this.getButtoFromScoreButton(ScoreCategory.SM_Straight).isScored()){
-           this.categoryToValue.put(ScoreCategory.SM_Straight, this.scoreStraight(4) > 3 ? 30:0);
+           ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
+           this.categoryToValue.put(ScoreCategory.SM_Straight, this.scoreStraight(1, dices) == 5 ? 30:0);
        }
 
        if(!this.getButtoFromScoreButton(ScoreCategory.LG_Straight).isScored()){
-           this.categoryToValue.put(ScoreCategory.LG_Straight, this.scoreStraight(5) > 4 ? 40:0);
+           ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
+           this.categoryToValue.put(ScoreCategory.LG_Straight, this.scoreStraight(2, dices) == 5 ? 40:0);
        }
 
        if(!this.getButtoFromScoreButton(ScoreCategory.Full_House).isScored()){
@@ -128,20 +131,22 @@ public class ScoreValues {
        return tatal;
    }
 
-   public Integer scoreStraight(int num){
+   public Integer scoreStraight(int min, ArrayList<Integer> dices){
         int count = 0;
-        ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
+//        ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
         Collections.sort(dices);
         for(int i = 0; i < dices.size() - 1; i ++){
-            if(dices.get(i) == dices.get(i + 1) + 1){
+            if(dices.get(i) == (dices.get(i + 1) + 1)){
                 count += 1;
+                Log.i("Dice", "Rolled a " + count);
             }
         }
 
-        if (count >= num){
+        if (count == dices.size() && dices.get(0) == min){
             return count;
+        }else {
+            return 0;
         }
-        return 0;
    }
 
 

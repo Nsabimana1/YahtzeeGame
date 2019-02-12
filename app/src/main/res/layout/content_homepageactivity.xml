@@ -35,7 +35,7 @@
             android:layout_marginTop="73dp"
             android:layout_marginEnd="110dp"
             android:layout_marginBottom="542dp"
-            android:text="0" />
+            android:text="1" />
 
         <Button
             android:id="@+id/dice2"
@@ -45,7 +45,7 @@
             android:layout_marginTop="74dp"
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="539dp"
-            android:text="0" />
+            android:text="2" />
 
         <Button
             android:id="@+id/dice3"
@@ -55,7 +55,7 @@
             android:layout_marginTop="154dp"
             android:layout_marginEnd="69dp"
             android:layout_marginBottom="460dp"
-            android:text="0" />
+            android:text="3" />
 
         <!--<Button-->
         <!--android:id="@+id/button16"-->
@@ -77,7 +77,7 @@
             android:layout_marginTop="229dp"
             android:layout_marginEnd="119dp"
             android:layout_marginBottom="376dp"
-            android:text="0" />
+            android:text="4" />
 
         <Button
             android:id="@+id/dice4"
@@ -87,7 +87,7 @@
             android:layout_marginTop="231dp"
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="377dp"
-            android:text="0" />
+            android:text="5" />
 
     </android.support.design.widget.CoordinatorLayout>
 
@@ -152,14 +152,12 @@
                 <Button
                     android:id="@+id/p1__aces"
                     android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_aces"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -177,14 +175,12 @@
                 <Button
                     android:id="@+id/p1_twos"
                     android:layout_width="56dp"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_twos"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -202,14 +198,12 @@
                 <Button
                     android:id="@+id/p1_threes"
                     android:layout_width="67dp"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_threes"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -227,14 +221,12 @@
                 <Button
                     android:id="@+id/p1_fours"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_fours"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -253,14 +245,12 @@
                 <Button
                     android:id="@+id/p1_fives"
                     android:layout_width="45dp"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_fives"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -279,14 +269,12 @@
                 <Button
                     android:id="@+id/p1_sixes"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_sixes"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
 
@@ -367,14 +355,12 @@
                 <Button
                     android:id="@+id/p1_3_of_a_kind"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_3_of_a_kind"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -393,14 +379,12 @@
                 <Button
                     android:id="@+id/p1_4_of_a_kind"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_4_of_a_kind"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -419,14 +403,12 @@
                 <Button
                     android:id="@+id/p1_fullhouse"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_fullhouse"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -445,14 +427,12 @@
                 <Button
                     android:id="@+id/p1_sm_straight"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_sm_straight"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -471,14 +451,12 @@
                 <Button
                     android:id="@+id/p1_lg_straight"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_lg_straight"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <TableRow
@@ -496,14 +474,12 @@
                 <Button
                     android:id="@+id/p1_chance"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_chance"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
             </TableRow>
 
@@ -523,14 +499,12 @@
                 <Button
                     android:id="@+id/p1_yahtzee"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/p2_yahtzee"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="0" />
+                    android:layout_height="match_parent" />
             </TableRow>
 
             <TableRow

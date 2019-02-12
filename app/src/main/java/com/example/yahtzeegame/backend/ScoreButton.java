@@ -39,5 +39,6 @@ public class ScoreButton {
         this.isScored = false;
         this.button.setBackgroundColor(0xFFFFFFFF);
         this.button.setText("0");
+        this.button.setEnabled(true);
     }
 }
