@@ -48,6 +48,9 @@ public class ScoreValues {
        return score ;
    }
 
+   public int getScoreFor(ScoreCategory sc) {
+        return categoryToValue.get(sc);
+   }
 
    public ScoreButton getButtoFromScoreButton(ScoreCategory category){
         ScoreButton toReturn = null;
@@ -96,12 +99,12 @@ public class ScoreValues {
        }
        if(!this.getButtoFromScoreButton(ScoreCategory.SM_Straight).isScored()){
            ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
-           this.categoryToValue.put(ScoreCategory.SM_Straight, this.scoreStraight(1, dices) == 5 ? 30:0);
+           this.categoryToValue.put(ScoreCategory.SM_Straight, this.scoreStraight(1) ? 30:0);
        }
 
        if(!this.getButtoFromScoreButton(ScoreCategory.LG_Straight).isScored()){
            ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
-           this.categoryToValue.put(ScoreCategory.LG_Straight, this.scoreStraight(2, dices) == 5 ? 40:0);
+           this.categoryToValue.put(ScoreCategory.LG_Straight, this.scoreStraight(2) ? 40:0);
        }
 
        if(!this.getButtoFromScoreButton(ScoreCategory.Full_House).isScored()){
@@ -131,29 +134,30 @@ public class ScoreValues {
        return tatal;
    }
 
-   public Integer scoreStraight(int min, ArrayList<Integer> dices){
+   public boolean scoreStraight(int min){
         int count = 0;
-//        ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
+        ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
         Collections.sort(dices);
         for(int i = 0; i < dices.size() - 1; i ++){
-            if(dices.get(i) == (dices.get(i + 1) + 1)){
+            if(dicetoScoreCount.get(dices.get(i)) > 0 && dices.get(i) + 1 == (dices.get(i + 1))){
                 count += 1;
-                Log.i("Dice", "Rolled a " + count);
             }
         }
 
-        if (count == dices.size() && dices.get(0) == min){
-            return count;
+        if (count == dices.size() - 1 && dices.get(0) == min){
+            return true;
         }else {
-            return 0;
+            return false;
         }
    }
 
 
    public Integer getInitialSum(){
         int initialSum = 0;
-        for(Integer e: this.dicetoScoreCount.keySet()){
-            initialSum += (this.dicetoScoreCount.get(e) * e);
+        for (ScoreCategory sc: ScoreCategory.values()) {
+            if (ScoreCategory.getCategoryValue(sc) > 0) {
+                initialSum += this.categoryToValue.get(sc);
+            }
         }
         return initialSum;
    }
@@ -174,5 +178,4 @@ public class ScoreValues {
    public HashMap<ScoreCategory, Integer> getCategoryToValueMap(){
         return this.categoryToValue;
    }
-
 }

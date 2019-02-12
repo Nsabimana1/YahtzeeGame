@@ -1,5 +1,7 @@
 package com.example.yahtzeegame;
 
+import com.example.yahtzeegame.backend.Dice;
+import com.example.yahtzeegame.backend.ScoreCategory;
 import com.example.yahtzeegame.backend.ScoreValues;
 
 import org.junit.Test;
@@ -15,22 +17,44 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
-
     ScoreValues scoreValues = new ScoreValues();
-    ArrayList<Integer> dices = new ArrayList<Integer>();
+    ArrayList<Dice> dices = new ArrayList<>();
+
+    public void loadDice(int... values) {
+        for (int value: values) {
+            dices.add(new Dice(value));
+        }
+    }
 
     @Test
     public void straightScoreIsCorrect(){
-        dices.add(1);
-        dices.add(2);
-        dices.add(3);
-        dices.add(4);
-        dices.add(5);
-        int result = scoreValues.scoreStraight(1, dices);
-        assertEquals(result, 5);
+        loadDice(1, 2, 3, 4, 5);
+        scoreValues.calculateScore(dices);
+        assertTrue(scoreValues.scoreStraight(1));
+    }
+
+    @Test
+    public void straightScoreIsNotCorrect(){
+        loadDice(1, 1, 3, 4, 5);
+        scoreValues.calculateScore(dices);
+        assertFalse(scoreValues.scoreStraight(1));
+    }
+
+    @Test
+    public void diceTotalTest1() {
+        loadDice(1, 1, 1, 4, 4);
+        scoreValues.calculateScore(dices);
+        scoreValues.assignCategoryValues();
+        for (ScoreCategory sc: ScoreCategory.values()) {
+            if (sc.equals(ScoreCategory.Aces)) {
+                assertEquals(3, scoreValues.getScoreFor(sc));
+            } else if (sc.equals(ScoreCategory.Fours)) {
+                assertEquals(8, scoreValues.getScoreFor(sc));
+            } else if (sc.equals(ScoreCategory.Chance)) {
+                assertEquals(11, scoreValues.getScoreFor(sc));
+            } else {
+                assertEquals(0, scoreValues.getScoreFor(sc));
+            }
+        }
     }
 }

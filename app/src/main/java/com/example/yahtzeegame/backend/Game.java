@@ -22,35 +22,39 @@ public class Game {
                 d.Roll();
             }
         }
+        this.activateScoreButtons(this.currentPlayer);
         this.currentPlayer.getScoreValues().calculateScore(this.alldices);
         this.currentPlayer.displayResult();
     }
 
     public void setInitialPlayer() {
         this.currentPlayer = this.players.get(0);
-        if(players.size() > 1){
-            this.disactivateScoreButtons(players.get(1));
+        for(Player p: this.players){
+            this.disactivateScoreButtons(p);
         }
     }
 
     public void switchPlayer(){
         if (players.size() == 1){
             this.currentPlayer = players.get(0);
-            this.currentPlayer.displayResult();
+            this.disactivateScoreButtons(this.currentPlayer);
+//            this.currentPlayer.displayResult();
         }else {
             if(this.currentPlayer.equals(players.get(0))) {
                 this.currentPlayer = players.get(1);
-                this.activateScoreButtons(players.get(1));
+                this.disactivateScoreButtons(players.get(1));
                 this.disactivateScoreButtons(players.get(0));
                 this.currentPlayer.displayResult();
             } else {
                 this.currentPlayer = players.get(0);
-                this.activateScoreButtons(players.get(0));
+                this.disactivateScoreButtons(players.get(0));
                 this.disactivateScoreButtons(players.get(1));
                 this.currentPlayer.displayResult();
             }
         }
     }
+
+
 
     public void disactivateScoreButtons(Player player){
         for(ScoreButton b: player.getAllScoreButtons()){

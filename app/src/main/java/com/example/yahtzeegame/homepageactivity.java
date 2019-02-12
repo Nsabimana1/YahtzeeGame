@@ -29,6 +29,43 @@ public class homepageactivity extends AppCompatActivity
     private String selectedButton;
     private Integer nRollTurns = 0;
 
+    // initializing scoring buttons for player 1
+    private Button p1AcesScoreButton;
+    private Button p1TwosScoreButton;
+    private Button p1ThreesScoreButton;
+    private Button p1FoursScoreButton;
+    private Button p1FivesScoreButton;
+    private Button p1SixesScoreButton;
+    private Button P1ThreeOFaKindScoreButton;
+    private Button p1FourOfaKindScoreButton;
+    private Button p1smStraightScoreButton;
+    private Button p1lgStraightScoreButton;
+    private Button p1FullHouseScoreButton;
+    private Button P1YahzteeScoreButton;
+    private Button p1ChanceScoreButton;
+
+    private TextView p1sumView;
+    private TextView p1bonusView;
+    private TextView p1totalScoreView;
+
+    // initializing scoring buttons for player 2
+    private Button p2AcesScoreButton;
+    private Button p2TwosScoreButton;
+    private Button p2ThreesScoreButton;
+    private Button p2FoursScoreButton;
+    private Button p2FivesScoreButton;
+    private Button p2SixesScoreButton;
+    private Button P2ThreeOFaKindScoreButton;
+    private Button p2FourOfaKindScoreButton;
+    private Button p2smStraightScoreButton;
+    private Button p2lgStraightScoreButton;
+    private Button p2FullHouseScoreButton;
+    private Button P2YahzteeScoreButton;
+    private Button p2ChanceScoreButton;
+
+    private TextView p2sumView;
+    private TextView p2bonusView;
+    private TextView p2totalScoreView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,123 +98,56 @@ public class homepageactivity extends AppCompatActivity
         game.addDiceButton(dice4);
         game.addDiceButton(dice5);
 
-        // initializing scoring buttons for player 1
-        final Button p1AcesScoreButton = findViewById(R.id.p1__aces);
-        final Button p1TwosScoreButton = findViewById(R.id.p1_twos);
-        final Button p1ThreesScoreButton = findViewById(R.id.p1_threes);
-        final Button p1FoursScoreButton = findViewById(R.id.p1_fours);
-        final Button p1FivesScoreButton = findViewById(R.id.p1_fives);
-        final Button p1SixesScoreButton = findViewById(R.id.p1_sixes);
-        final Button P1ThreeOFaKindScoreButton = findViewById(R.id.p1_3_of_a_kind);
-        final Button p1FourOfaKindScoreButton = findViewById(R.id.p1_4_of_a_kind);
-        final Button p1smStraightScoreButton = findViewById(R.id.p1_sm_straight);
-        final Button p1lgStraightScoreButton = findViewById(R.id.p1_lg_straight);
-        final Button p1FullHouseScoreButton = findViewById(R.id.p1_fullhouse);
-        final Button P1YahzteeScoreButton = findViewById(R.id.p1_yahtzee);
-        final Button p1ChanceScoreButton = findViewById(R.id.p1_chance);
+        p1AcesScoreButton = findViewById(R.id.p1__aces);
+        p1TwosScoreButton = findViewById(R.id.p1_twos);
+        p1ThreesScoreButton = findViewById(R.id.p1_threes);
+        p1FoursScoreButton = findViewById(R.id.p1_fours);
+        p1FivesScoreButton = findViewById(R.id.p1_fives);
+        p1SixesScoreButton = findViewById(R.id.p1_sixes);
+        P1ThreeOFaKindScoreButton = findViewById(R.id.p1_3_of_a_kind);
+        p1FourOfaKindScoreButton = findViewById(R.id.p1_4_of_a_kind);
+        p1smStraightScoreButton = findViewById(R.id.p1_sm_straight);
+        p1lgStraightScoreButton = findViewById(R.id.p1_lg_straight);
+        p1FullHouseScoreButton = findViewById(R.id.p1_fullhouse);
+        P1YahzteeScoreButton = findViewById(R.id.p1_yahtzee);
+        p1ChanceScoreButton = findViewById(R.id.p1_chance);
 
-        // initializing scoring buttons for player 1
-        final Button p2AcesScoreButton = findViewById(R.id.p2_aces);
-        final Button p2TwosScoreButton = findViewById(R.id.p2_twos);
-        final Button p2ThreesScoreButton = findViewById(R.id.p2_threes);
-        final Button p2FoursScoreButton = findViewById(R.id.p2_fours);
-        final Button p2FivesScoreButton = findViewById(R.id.p2_fives);
-        final Button p2SixesScoreButton = findViewById(R.id.p2_sixes);
-        final Button P2ThreeOFaKindScoreButton = findViewById(R.id.p2_3_of_a_kind);
-        final Button p2FourOfaKindScoreButton = findViewById(R.id.p2_4_of_a_kind);
-        final Button p2smStraightScoreButton = findViewById(R.id.p2_sm_straight);
-        final Button p2lgStraightScoreButton = findViewById(R.id.p2_lg_straight);
-        final Button p2FullHouseScoreButton = findViewById(R.id.p2_fullhouse);
-        final Button P2YahzteeScoreButton = findViewById(R.id.p2_yahtzee);
-        final Button p2ChanceScoreButton = findViewById(R.id.p2_chance);
+        p1sumView = findViewById(R.id.p1_initial_sum);
+        p1bonusView = findViewById(R.id.p1_bonus_score);
+        p1totalScoreView = findViewById(R.id.p1_total_score);
+
+
+        p2AcesScoreButton = findViewById(R.id.p2_aces);
+        p2TwosScoreButton = findViewById(R.id.p2_twos);
+        p2ThreesScoreButton = findViewById(R.id.p2_threes);
+        p2FoursScoreButton = findViewById(R.id.p2_fours);
+        p2FivesScoreButton = findViewById(R.id.p2_fives);
+        p2SixesScoreButton = findViewById(R.id.p2_sixes);
+        P2ThreeOFaKindScoreButton = findViewById(R.id.p2_3_of_a_kind);
+        p2FourOfaKindScoreButton = findViewById(R.id.p2_4_of_a_kind);
+        p2smStraightScoreButton = findViewById(R.id.p2_sm_straight);
+        p2lgStraightScoreButton = findViewById(R.id.p2_lg_straight);
+        p2FullHouseScoreButton = findViewById(R.id.p2_fullhouse);
+        P2YahzteeScoreButton = findViewById(R.id.p2_yahtzee);
+        p2ChanceScoreButton = findViewById(R.id.p2_chance);
+
+        p2sumView = findViewById(R.id.p2_initial_sum);
+        p2bonusView = findViewById(R.id.p2_bonus_score);
+        p2totalScoreView = findViewById(R.id.p2_total_score);
 
         if (this.selectedButton.equals("Single Player")){
             game.initializePlayers(1);
             Player player1 = game.getPlayers().get(0);
-            player1.addScoreButton(p1AcesScoreButton, ScoreCategory.Aces);
-            player1.addScoreButton(p1TwosScoreButton, ScoreCategory.Twos);
-            player1.addScoreButton(p1ThreesScoreButton, ScoreCategory.Threes);
-            player1.addScoreButton(p1FoursScoreButton, ScoreCategory.Fours);
-            player1.addScoreButton(p1FivesScoreButton, ScoreCategory.Fives);
-            player1.addScoreButton(p1SixesScoreButton, ScoreCategory.Sixes);
-            player1.addScoreButton(p1FullHouseScoreButton, ScoreCategory.Full_House);
-            player1.addScoreButton(P1ThreeOFaKindScoreButton, ScoreCategory.Three_of_a_kind);
-            player1.addScoreButton(p1FourOfaKindScoreButton, ScoreCategory.Four_of_a_kind);
-            player1.addScoreButton(p1smStraightScoreButton, ScoreCategory.SM_Straight);
-            player1.addScoreButton(p1lgStraightScoreButton, ScoreCategory.LG_Straight);
-            player1.addScoreButton(p1ChanceScoreButton, ScoreCategory.Chance);
-            player1.addScoreButton(P1YahzteeScoreButton, ScoreCategory.Yahtzee);
-
-            TextView p1sumView = findViewById(R.id.p1_initial_sum);
-            TextView p1bonusView = findViewById(R.id.p1_bonus_score);
-            TextView p1totalScoreView = findViewById(R.id.p1_total_score);
-            player1.setSumView(p1sumView);
-            player1.setBonusView(p1bonusView);
-            player1.setTotalScoreView(p1totalScoreView);
-
-            p2AcesScoreButton.setEnabled(false);
-            p2TwosScoreButton.setEnabled(false);
-            p2ThreesScoreButton.setEnabled(false);
-            p2FoursScoreButton.setEnabled(false);
-            p2FivesScoreButton.setEnabled(false);
-            p2SixesScoreButton.setEnabled(false);
-
-            p2FullHouseScoreButton.setEnabled(false);
-            P2ThreeOFaKindScoreButton.setEnabled(false);
-            p2FourOfaKindScoreButton.setEnabled(false);
-            p2ChanceScoreButton.setEnabled(false);
-            P2YahzteeScoreButton.setEnabled(false);
-            p2lgStraightScoreButton.setEnabled(false);
-            p2smStraightScoreButton.setEnabled(false);
+            this.setPlayer1GuiButtons(player1);
 
             Log.i(homepageactivity.class.getName(), "One player");
         }else{
             game.initializePlayers(2);
             Player player1 = game.getPlayers().get(0);
             Player player2 = game.getPlayers().get(1);
+            this.setPlayer1GuiButtons(player1);
+            this.setPlayer2GuiButtons(player2);
 
-            TextView p1sumView = findViewById(R.id.p1_initial_sum);
-            TextView p1bonusView = findViewById(R.id.p1_bonus_score);
-            TextView p1totalScoreView = findViewById(R.id.p1_total_score);
-            player1.setSumView(p1sumView);
-            player1.setBonusView(p1bonusView);
-            player1.setTotalScoreView(p1totalScoreView);
-
-            player1.addScoreButton(p1AcesScoreButton, ScoreCategory.Aces);
-            player1.addScoreButton(p1TwosScoreButton, ScoreCategory.Twos);
-            player1.addScoreButton(p1ThreesScoreButton, ScoreCategory.Threes);
-            player1.addScoreButton(p1FoursScoreButton, ScoreCategory.Fours);
-            player1.addScoreButton(p1FivesScoreButton, ScoreCategory.Fives);
-            player1.addScoreButton(p1SixesScoreButton, ScoreCategory.Sixes);
-            player1.addScoreButton(p1FullHouseScoreButton, ScoreCategory.Full_House);
-            player1.addScoreButton(P1ThreeOFaKindScoreButton, ScoreCategory.Three_of_a_kind);
-            player1.addScoreButton(p1FourOfaKindScoreButton, ScoreCategory.Four_of_a_kind);
-            player1.addScoreButton(p1smStraightScoreButton, ScoreCategory.SM_Straight);
-            player1.addScoreButton(p1lgStraightScoreButton, ScoreCategory.LG_Straight);
-            player1.addScoreButton(p1ChanceScoreButton, ScoreCategory.Chance);
-            player1.addScoreButton(P1YahzteeScoreButton, ScoreCategory.Yahtzee);
-
-
-            TextView p2sumView = findViewById(R.id.p2_initial_sum);
-            TextView p2bonusView = findViewById(R.id.p2_bonus_score);
-            TextView p2totalScoreView = findViewById(R.id.p2_total_score);
-            player2.setSumView(p2sumView);
-            player2.setBonusView(p2bonusView);
-            player2.setTotalScoreView(p2totalScoreView);
-
-            player2.addScoreButton(p2AcesScoreButton, ScoreCategory.Aces);
-            player2.addScoreButton(p2TwosScoreButton, ScoreCategory.Twos);
-            player2.addScoreButton(p2ThreesScoreButton, ScoreCategory.Threes);
-            player2.addScoreButton(p2FoursScoreButton, ScoreCategory.Fours);
-            player2.addScoreButton(p2FivesScoreButton, ScoreCategory.Fives);
-            player2.addScoreButton(p2SixesScoreButton, ScoreCategory.Sixes);
-            player2.addScoreButton(p2FullHouseScoreButton, ScoreCategory.Full_House);
-            player2.addScoreButton(P2ThreeOFaKindScoreButton, ScoreCategory.Three_of_a_kind);
-            player2.addScoreButton(p2FourOfaKindScoreButton, ScoreCategory.Four_of_a_kind);
-            player2.addScoreButton(p2smStraightScoreButton, ScoreCategory.SM_Straight);
-            player2.addScoreButton(p2lgStraightScoreButton, ScoreCategory.LG_Straight);
-            player2.addScoreButton(p2ChanceScoreButton, ScoreCategory.Chance);
-            player2.addScoreButton(P2YahzteeScoreButton, ScoreCategory.Yahtzee);
             Log.i(homepageactivity.class.getName(), "Two player");
         }
 
@@ -220,9 +190,6 @@ public class homepageactivity extends AppCompatActivity
                 game.resetAllDices();
                 nRollTurns = 0;
                 game.resetAllDices();
-                if(!game.getCurrntScoreButton((Button)v).isScored()){
-
-                }
                 game.getCurrntScoreButton((Button)v).markScored();
                 game.switchPlayer();
                 roll.setEnabled(true);
@@ -257,6 +224,92 @@ public class homepageactivity extends AppCompatActivity
         p2lgStraightScoreButton.setOnClickListener(ScoreButtonSelected);
         P2YahzteeScoreButton.setOnClickListener(ScoreButtonSelected);
 
+
+    }
+
+
+    public void setPlayer1GuiButtons(Player player1){
+        player1.addScoreButton(p1AcesScoreButton, ScoreCategory.Aces);
+        player1.addScoreButton(p1TwosScoreButton, ScoreCategory.Twos);
+        player1.addScoreButton(p1ThreesScoreButton, ScoreCategory.Threes);
+        player1.addScoreButton(p1FoursScoreButton, ScoreCategory.Fours);
+        player1.addScoreButton(p1FivesScoreButton, ScoreCategory.Fives);
+        player1.addScoreButton(p1SixesScoreButton, ScoreCategory.Sixes);
+        player1.addScoreButton(p1FullHouseScoreButton, ScoreCategory.Full_House);
+        player1.addScoreButton(P1ThreeOFaKindScoreButton, ScoreCategory.Three_of_a_kind);
+        player1.addScoreButton(p1FourOfaKindScoreButton, ScoreCategory.Four_of_a_kind);
+        player1.addScoreButton(p1smStraightScoreButton, ScoreCategory.SM_Straight);
+        player1.addScoreButton(p1lgStraightScoreButton, ScoreCategory.LG_Straight);
+        player1.addScoreButton(p1ChanceScoreButton, ScoreCategory.Chance);
+        player1.addScoreButton(P1YahzteeScoreButton, ScoreCategory.Yahtzee);
+
+        player1.setSumView(p1sumView);
+        player1.setBonusView(p1bonusView);
+        player1.setTotalScoreView(p1totalScoreView);
+
+        p2AcesScoreButton.setEnabled(false);
+        p2TwosScoreButton.setEnabled(false);
+        p2ThreesScoreButton.setEnabled(false);
+        p2FoursScoreButton.setEnabled(false);
+        p2FivesScoreButton.setEnabled(false);
+        p2SixesScoreButton.setEnabled(false);
+        p2FullHouseScoreButton.setEnabled(false);
+        P2ThreeOFaKindScoreButton.setEnabled(false);
+        p2FourOfaKindScoreButton.setEnabled(false);
+        p2ChanceScoreButton.setEnabled(false);
+        P2YahzteeScoreButton.setEnabled(false);
+        p2lgStraightScoreButton.setEnabled(false);
+        p2smStraightScoreButton.setEnabled(false);
+
+        p2AcesScoreButton.setText("");
+        p2TwosScoreButton.setText("");
+        p2ThreesScoreButton.setText("");
+        p2FoursScoreButton.setText("");
+        p2FivesScoreButton.setText("");
+        p2SixesScoreButton.setText("");
+        p2FullHouseScoreButton.setText("");
+        P2ThreeOFaKindScoreButton.setText("");
+        p2FourOfaKindScoreButton.setText("");
+        p2ChanceScoreButton.setText("");
+        P2YahzteeScoreButton.setText("");
+        p2lgStraightScoreButton.setText("");
+        p2smStraightScoreButton.setText("");
+
+
+        p2AcesScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2TwosScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2ThreesScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2FoursScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2FivesScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2SixesScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2FullHouseScoreButton.setBackgroundColor(0xFFFFFFFF);
+        P2ThreeOFaKindScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2FourOfaKindScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2ChanceScoreButton.setBackgroundColor(0xFFFFFFFF);
+        P2YahzteeScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2lgStraightScoreButton.setBackgroundColor(0xFFFFFFFF);
+        p2smStraightScoreButton.setBackgroundColor(0xFFFFFFFF);
+
+    }
+
+    public void setPlayer2GuiButtons(Player player2){
+        player2.addScoreButton(p2AcesScoreButton, ScoreCategory.Aces);
+        player2.addScoreButton(p2TwosScoreButton, ScoreCategory.Twos);
+        player2.addScoreButton(p2ThreesScoreButton, ScoreCategory.Threes);
+        player2.addScoreButton(p2FoursScoreButton, ScoreCategory.Fours);
+        player2.addScoreButton(p2FivesScoreButton, ScoreCategory.Fives);
+        player2.addScoreButton(p2SixesScoreButton, ScoreCategory.Sixes);
+        player2.addScoreButton(p2FullHouseScoreButton, ScoreCategory.Full_House);
+        player2.addScoreButton(P2ThreeOFaKindScoreButton, ScoreCategory.Three_of_a_kind);
+        player2.addScoreButton(p2FourOfaKindScoreButton, ScoreCategory.Four_of_a_kind);
+        player2.addScoreButton(p2smStraightScoreButton, ScoreCategory.SM_Straight);
+        player2.addScoreButton(p2lgStraightScoreButton, ScoreCategory.LG_Straight);
+        player2.addScoreButton(p2ChanceScoreButton, ScoreCategory.Chance);
+        player2.addScoreButton(P2YahzteeScoreButton, ScoreCategory.Yahtzee);
+
+        player2.setSumView(p2sumView);
+        player2.setBonusView(p2bonusView);
+        player2.setTotalScoreView(p2totalScoreView);
 
     }
 
@@ -309,11 +362,24 @@ public class homepageactivity extends AppCompatActivity
         if (id == R.id.single_player_mode) {
             game.deleteAllPlayers();
             game.initializePlayers(1);
-//            game.addPlayer(new Player());
-            // Handle the camera action
+            Player player1 = game.getPlayers().get(0);
+            this.setPlayer1GuiButtons(player1);
+            game.restAllScoreButtons();
+            game.resetAllDices();
+            this.nRollTurns = 0;
+            game.setInitialPlayer();
+
         } else if (id == R.id.two_player_mode) {
             game.deleteAllPlayers();
             game.initializePlayers(2);
+            Player player1 = game.getPlayers().get(0);
+            Player player2 = game.getPlayers().get(1);
+            this.setPlayer1GuiButtons(player1);
+            this.setPlayer2GuiButtons(player2);
+            game.restAllScoreButtons();
+            game.resetAllDices();
+            this.nRollTurns = 0;
+            game.setInitialPlayer();
 
 
         } else if (id == R.id.replay_game) {
@@ -322,17 +388,10 @@ public class homepageactivity extends AppCompatActivity
             roll.setEnabled(true);
             this.nRollTurns = 0;
 
-
         } else if (id == R.id.exit_app) {
             this.selectedButton = "";
             finish();
         }
-
-//        else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

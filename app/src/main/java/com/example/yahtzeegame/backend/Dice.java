@@ -17,7 +17,6 @@ public class Dice {
 
     public Dice(Integer value) {
         this.value = value;
-
     }
 
     public void Roll(){
@@ -34,11 +33,15 @@ public class Dice {
         this.selected = true;
     }
 
-        public void resetDice(){
+    public void resetDice(){
         this.buttonDice.setBackgroundColor(0xFFFFFFFF);
         this.value = 0;
         this.buttonDice.setText("0");
         this.selected = false;
+    }
+
+    public void disActivateDice(){
+        this.buttonDice.setEnabled(false);
     }
 
     public boolean isSelected(){
