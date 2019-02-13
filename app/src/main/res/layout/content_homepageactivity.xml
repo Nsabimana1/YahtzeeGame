@@ -237,7 +237,7 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:padding="2dp"
                     android:text="Fives"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -261,7 +261,7 @@
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:padding="2dp"
                     android:text="Sixes"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -286,7 +286,7 @@
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:padding="2dp"
                     android:text="Sum"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -295,7 +295,7 @@
                     android:id="@+id/p1_initial_sum"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:padding="7dp"
+                    android:padding="2dp"
                     android:text="0"
                     android:textStyle="bold" />
 
@@ -317,7 +317,7 @@
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:padding="2dp"
                     android:text="Bonus"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -469,7 +469,8 @@
                     android:layout_height="wrap_content"
                     android:textSize="16dp"
                     android:padding="2dp"
-                    android:text="Chance" />
+                    android:text="Chance"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/p1_chance"
@@ -517,18 +518,23 @@
                     android:layout_height="wrap_content"
                     android:padding="2dp"
                     android:textSize="16dp"
-                    android:text="Total Score" />
+                    android:text="Total Score"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/p1_total_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:textSize="16dp"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/p2_total_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:textSize="16dp"
                     android:text="0" />
 
             </TableRow>

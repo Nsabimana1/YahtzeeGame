@@ -139,20 +139,24 @@ public class homepageactivity extends AppCompatActivity
             game.initializePlayers(1);
             Player player1 = game.getPlayers().get(0);
             this.setPlayer1GuiButtons(player1);
+            game.restAllScoreButtons();
+            game.resetAllDices();
+            this.nRollTurns = 0;
+            game.setInitialPlayer();
 
-            Log.i(homepageactivity.class.getName(), "One player");
         }else{
             game.initializePlayers(2);
             Player player1 = game.getPlayers().get(0);
             Player player2 = game.getPlayers().get(1);
             this.setPlayer1GuiButtons(player1);
             this.setPlayer2GuiButtons(player2);
-
-            Log.i(homepageactivity.class.getName(), "Two player");
+            game.restAllScoreButtons();
+            game.resetAllDices();
+            this.nRollTurns = 0;
+            game.setInitialPlayer();
         }
 
         roll = findViewById(R.id.rollButton);
-        game.setInitialPlayer();
         roll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -290,6 +294,10 @@ public class homepageactivity extends AppCompatActivity
         p2lgStraightScoreButton.setBackgroundColor(0xFFFFFFFF);
         p2smStraightScoreButton.setBackgroundColor(0xFFFFFFFF);
 
+        p2sumView.setText("");
+        p2bonusView.setText("");
+        p2totalScoreView.setText("");
+
     }
 
     public void setPlayer2GuiButtons(Player player2){
@@ -310,6 +318,7 @@ public class homepageactivity extends AppCompatActivity
         player2.setSumView(p2sumView);
         player2.setBonusView(p2bonusView);
         player2.setTotalScoreView(p2totalScoreView);
+
 
     }
 
@@ -387,6 +396,7 @@ public class homepageactivity extends AppCompatActivity
             game.restAllScoreButtons();
             roll.setEnabled(true);
             this.nRollTurns = 0;
+            game.setInitialPlayer();
 
         } else if (id == R.id.exit_app) {
             this.selectedButton = "";

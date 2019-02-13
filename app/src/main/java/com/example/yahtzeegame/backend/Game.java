@@ -33,6 +33,10 @@ public class Game {
         this.currentPlayer = this.players.get(0);
         for(Player p: this.players){
             this.disactivateScoreButtons(p);
+            p.getInitialsumView().setText("0");
+            p.getBonusView().setText("0");
+            p.getTotalScoreView().setText("0");
+
         }
     }
 
@@ -73,13 +77,13 @@ public class Game {
     }
 
     public Dice getDice(Button dice){
-        Dice temPdice = null;
+        Dice tempDice = null;
         for(Dice d: alldices){
             if (d.getButtonDice().equals(dice)){
-                temPdice =  d;
+                tempDice =  d;
             }
         }
-        return temPdice;
+        return tempDice;
     }
 
     public void deleteAllPlayers(){

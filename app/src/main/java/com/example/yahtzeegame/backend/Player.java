@@ -25,6 +25,9 @@ public class Player {
         this.selectedDices = new HashSet<>();
         this.allscoreButtons = new ArrayList<>();
         this.scoreValues = new ScoreValues();
+        this.bonusScore = 0;
+        this.initialSumScore = 0;
+        this.totalScore = 0;
     }
 
 
@@ -44,7 +47,17 @@ public class Player {
         this.totalScore = totalScore;
     }
 
+    public TextView getInitialsumView(){
+        return this.initialsumView;
+    }
 
+    public TextView getBonusView(){
+        return this.bonusView;
+    }
+
+    public TextView getTotalScoreView(){
+        return this.totalScoreView;
+    }
 
     public void setBonusScore(int bonusScore){
         this.bonusScore = bonusScore;
