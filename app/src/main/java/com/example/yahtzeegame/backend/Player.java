@@ -9,7 +9,6 @@ import java.util.HashSet;
 
 public class Player {
     private ArrayList<Dice> allDices;
-    private HashSet<Dice> selectedDices;
     private int totalScore;
     private int bonusScore;
     private int initialSumScore;
@@ -22,7 +21,6 @@ public class Player {
     public Player(ArrayList<Dice> allDices){
         this.totalScore = 0;
         this.allDices = allDices ;
-        this.selectedDices = new HashSet<>();
         this.allscoreButtons = new ArrayList<>();
         this.scoreValues = new ScoreValues();
         this.bonusScore = 0;
@@ -121,7 +119,4 @@ public class Player {
         this.totalScore = scoreValues.getTotalScore();
     }
 
-    public void addSelectedDice(Dice dice){
-        this.selectedDices.add(dice);
-    }
 }

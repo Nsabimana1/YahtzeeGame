@@ -93,18 +93,22 @@ public class ScoreValues {
 
        if(!this.getButtoFromScoreButton(ScoreCategory.Yahtzee).isScored()){
            this.categoryToValue.put(ScoreCategory.Yahtzee, this.getNumoffaKind(5) > 0 ? 50:0);
+       }else if(this.getButtoFromScoreButton(ScoreCategory.Yahtzee).isScored() && this.getNumoffaKind(5) > 0){
+           int newScore = this.categoryToValue.get(ScoreCategory.Yahtzee) + 100;
+           this.categoryToValue.put(ScoreCategory.Yahtzee, newScore);
        }
+
        if(!this.getButtoFromScoreButton(ScoreCategory.Chance).isScored()){
            this.categoryToValue.put(ScoreCategory.Chance, this.ScoreAChance());
        }
        if(!this.getButtoFromScoreButton(ScoreCategory.SM_Straight).isScored()){
            ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
-           this.categoryToValue.put(ScoreCategory.SM_Straight, this.scoreStraight(1) ? 30:0);
+           this.categoryToValue.put(ScoreCategory.SM_Straight, this.scoreStraight(4) ? 30:0);
        }
 
        if(!this.getButtoFromScoreButton(ScoreCategory.LG_Straight).isScored()){
            ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
-           this.categoryToValue.put(ScoreCategory.LG_Straight, this.scoreStraight(2) ? 40:0);
+           this.categoryToValue.put(ScoreCategory.LG_Straight, this.scoreStraight(5) ? 40:0);
        }
 
        if(!this.getButtoFromScoreButton(ScoreCategory.Full_House).isScored()){
@@ -134,7 +138,7 @@ public class ScoreValues {
        return tatal;
    }
 
-   public boolean scoreStraight(int min){
+   public boolean scoreStraight(int val){
         int count = 0;
         ArrayList<Integer> dices  = new ArrayList<>(this.dicetoScoreCount.keySet());
         Collections.sort(dices);
@@ -144,7 +148,7 @@ public class ScoreValues {
             }
         }
 
-        if (count == dices.size() - 1 && dices.get(0) == min){
+        if (count == val){
             return true;
         }else {
             return false;
@@ -172,7 +176,7 @@ public class ScoreValues {
         for(ScoreCategory c: this.categoryToValue.keySet()){
             totalSum += this.categoryToValue.get(c);
         }
-        return totalSum;
+        return totalSum + this.getBonusScore();
    }
 
    public HashMap<ScoreCategory, Integer> getCategoryToValueMap(){

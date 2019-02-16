@@ -26,7 +26,6 @@ public class OpenAppActivity extends AppCompatActivity {
         setContentView(R.layout.activity_open_app);
 
         radioGroup = findViewById(R.id.radiogroup);
-//        radioButton = findViewById(R.id.radioButton);
         proceed = findViewById(R.id.proceed);
         selectedbutton = "";
 

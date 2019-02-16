@@ -107,8 +107,8 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="78dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="106dp"
+                    android:layout_height="57dp"
 
                     android:text="Players"
                     android:textSize="20dp"
@@ -295,7 +295,7 @@
                     android:id="@+id/p1_initial_sum"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:padding="2dp"
+                    android:padding="10dp"
                     android:text="0"
                     android:textStyle="bold" />
 
@@ -303,7 +303,7 @@
                     android:id="@+id/p2_initial_sum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:padding="10dp"
                     android:text="0"
                     android:textStyle="bold" />
 
@@ -326,7 +326,7 @@
                     android:id="@+id/p1_bonus_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:padding="10dp"
                     android:text="0"
                     android:textStyle="bold" />
 
@@ -334,7 +334,7 @@
                     android:id="@+id/p2_bonus_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
+                    android:padding="10dp"
                     android:text="0"
                     android:textStyle="bold" />
             </TableRow>
@@ -525,17 +525,19 @@
                     android:id="@+id/p1_total_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="2dp"
+                    android:padding="10dp"
                     android:textSize="16dp"
-                    android:text="0" />
+                    android:text="0"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/p2_total_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="2dp"
+                    android:padding="10dp"
                     android:textSize="16dp"
-                    android:text="0" />
+                    android:text="0"
+                    android:textStyle="bold"/>
 
             </TableRow>
 

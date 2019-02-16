@@ -15,6 +15,7 @@ public class Dice {
         this.buttonDice = buttonDice;
     }
 
+    // for testing purpose
     public Dice(Integer value) {
         this.value = value;
     }
