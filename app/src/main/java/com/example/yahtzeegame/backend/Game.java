@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class Game {
-    private ArrayList<Dice> alldices = new ArrayList<>();
+    private ArrayList<Dice> allDices = new ArrayList<>();
     private ArrayList<Player> players = new ArrayList<>();
     private Player currentPlayer;
 
@@ -13,18 +13,18 @@ public class Game {
     }
 
     public void addDiceButton(Button dice) {
-        alldices.add(new Dice(dice));
+        allDices.add(new Dice(dice));
     }
 
     public void roll(){
         this.activateAllDices();
-        for(Dice d:alldices){
+        for(Dice d: allDices){
             if(!d.isSelected()){
                 d.Roll();
             }
         }
         this.activateScoreButtons(this.currentPlayer);
-        this.currentPlayer.getScoreValues().calculateScore(this.alldices);
+        this.currentPlayer.getScoreValues().calculateScore(this.allDices);
         this.currentPlayer.displayResult();
     }
 
@@ -32,8 +32,8 @@ public class Game {
         this.disActivateAllDices();
         this.currentPlayer = this.players.get(0);
         for(Player p: this.players){
-            this.disactivateScoreButtons(p);
-            p.getInitialsumView().setText("0");
+            this.deactivateScoreButtons(p);
+            p.getInitialSumView().setText("0");
             p.getBonusView().setText("0");
             p.getTotalScoreView().setText("0");
 
@@ -44,17 +44,17 @@ public class Game {
         this.disActivateAllDices();
         if (players.size() == 1){
             this.currentPlayer = players.get(0);
-            this.disactivateScoreButtons(this.currentPlayer);
+            this.deactivateScoreButtons(this.currentPlayer);
         }else {
             if(this.currentPlayer.equals(players.get(0))) {
                 this.currentPlayer = players.get(1);
-                this.disactivateScoreButtons(players.get(1));
-                this.disactivateScoreButtons(players.get(0));
+                this.deactivateScoreButtons(players.get(1));
+                this.deactivateScoreButtons(players.get(0));
                 this.currentPlayer.displayResult();
             } else {
                 this.currentPlayer = players.get(0);
-                this.disactivateScoreButtons(players.get(0));
-                this.disactivateScoreButtons(players.get(1));
+                this.deactivateScoreButtons(players.get(0));
+                this.deactivateScoreButtons(players.get(1));
                 this.currentPlayer.displayResult();
             }
         }
@@ -62,7 +62,7 @@ public class Game {
 
 
 
-    public void disactivateScoreButtons(Player player){
+    public void deactivateScoreButtons(Player player){
         for(ScoreButton b: player.getAllScoreButtons()){
             b.getButton().setEnabled(false);
         }
@@ -78,7 +78,7 @@ public class Game {
 
     public Dice getDice(Button dice){
         Dice tempDice = null;
-        for(Dice d: alldices){
+        for(Dice d: allDices){
             if (d.getButtonDice().equals(dice)){
                 tempDice =  d;
             }
@@ -91,14 +91,14 @@ public class Game {
     }
 
     public void resetAllDices(){
-        for(Dice d: alldices){
+        for(Dice d: allDices){
             d.resetDice();
         }
     }
 
     public void initializePlayers(int num){
         for(int i = 0; i <num; i ++){
-            this.players.add(new Player(this.alldices));
+            this.players.add(new Player(this.allDices));
         }
 
         for(int i = 0; i <num; i ++){
@@ -122,13 +122,13 @@ public class Game {
     }
 
     public void activateAllDices(){
-        for(Dice d: this.alldices){
+        for(Dice d: this.allDices){
             d.activateDice();
         }
     }
 
     public void disActivateAllDices(){
-        for(Dice d: this.alldices){
+        for(Dice d: this.allDices){
             d.disActivateDice();
         }
     }
@@ -140,4 +140,16 @@ public class Game {
             }
         }
     }
+
+    public boolean checkGameOver(){
+        for(Player p: this.players){
+            for(ScoreButton b: p.getAllScoreButtons()){
+                if(!b.isScored()){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 }

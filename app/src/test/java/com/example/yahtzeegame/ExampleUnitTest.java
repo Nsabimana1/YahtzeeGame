@@ -35,21 +35,39 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void straightScoreIsCorrect(){
-        loadDice(1, 2, 2, 4, 5);
+    public void smallStraightScoreIsCorrect(){
+        loadDice(3, 2, 3, 4, 5);
         scoreValues.calculateScore(dices);
+        assertTrue(scoreValues.scoreStraight(3));
+    }
+
+    @Test
+    public void smallStraightScoreIsNotCorrect(){
+        loadDice(1, 2, 3, 6, 5);
+        scoreValues.calculateScore(dices);
+        System.out.print(scoreValues.getDiceToScoreCount());
+        assertFalse(scoreValues.scoreStraight(3));
+    }
+
+    @Test
+    public void largeStraightScoreIsCorrect(){
+        loadDice(1, 2, 3, 4, 5);
+        scoreValues.calculateScore(dices);
+        System.out.print(scoreValues.getDiceToScoreCount());
         assertTrue(scoreValues.scoreStraight(4));
     }
 
     @Test
-    public void straightScoreIsNotCorrect(){
-        loadDice(1, 1, 3, 4, 5);
+    public void largeStraightScoreIsNotCorrect(){
+        loadDice(1, 2, 3, 4, 6);
         scoreValues.calculateScore(dices);
-        assertFalse(scoreValues.scoreStraight(5));
+        System.out.print(scoreValues.getDiceToScoreCount());
+        System.out.print(scoreValues.scoreStraight(4));
+        assertFalse(scoreValues.scoreStraight(4));
     }
 
     @Test
-    public void scoreChanceIscorrect(){
+    public void scoreChanceIsCorrect(){
         loadDice(1, 2, 1, 3, 4);
         this.loadScoreButtons();
         scoreValues.setAllScoreButtons(this.scoreButtonsForTesting);
@@ -78,24 +96,24 @@ public class ExampleUnitTest {
         scoreValues.setAllScoreButtons(this.scoreButtonsForTesting);
         scoreValues.calculateScore(dices);
         scoreValues.assignCategoryValues();
-        int numofaKind = scoreValues.getNumoffaKind(4);
+        int numofaKind = scoreValues.getNumOfaKind(4);
         assertEquals(numofaKind, 2);
     }
 
     @Test
-    public void getNumOfaKindIsnotCorrect(){
+    public void getNumOfaKindIsNotCorrect(){
         loadDice(2, 1, 5, 2, 4);
         this.loadScoreButtons();
         scoreValues.setAllScoreButtons(this.scoreButtonsForTesting);
         scoreValues.calculateScore(dices);
         scoreValues.assignCategoryValues();
-        int numofaKind = scoreValues.getNumoffaKind(4);
+        int numofaKind = scoreValues.getNumOfaKind(4);
         assertNotEquals(numofaKind, 2);
     }
 
 
     @Test
-    public void diceTotalTest1() {
+    public void diceTotalWithCategoryScores() {
         loadDice(1, 1, 1, 4, 4);
         this.loadScoreButtons();
         scoreValues.setAllScoreButtons(this.scoreButtonsForTesting);
@@ -131,7 +149,7 @@ public class ExampleUnitTest {
             }
         }
 
-        this.scoreValues.getButtoFromScoreButton(ScoreCategory.Yahtzee).setScored(true);
+        this.scoreValues.getScoreButtonByScoreCategory(ScoreCategory.Yahtzee).setScored(true);
 
         loadDice(2, 2, 2, 2, 2);
         this.loadScoreButtons();

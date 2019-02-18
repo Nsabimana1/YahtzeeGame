@@ -5,7 +5,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class Player {
     private ArrayList<Dice> allDices;
@@ -13,15 +12,15 @@ public class Player {
     private int bonusScore;
     private int initialSumScore;
     private ScoreValues scoreValues;
-    private ArrayList<ScoreButton> allscoreButtons;
-    private TextView initialsumView;
+    private ArrayList<ScoreButton> allScoreButtons;
+    private TextView initialSumView;
     private TextView bonusView;
     private TextView totalScoreView;
 
     public Player(ArrayList<Dice> allDices){
         this.totalScore = 0;
         this.allDices = allDices ;
-        this.allscoreButtons = new ArrayList<>();
+        this.allScoreButtons = new ArrayList<>();
         this.scoreValues = new ScoreValues();
         this.bonusScore = 0;
         this.initialSumScore = 0;
@@ -34,7 +33,7 @@ public class Player {
     }
 
     public void setSumView(TextView initialSumView){
-        this.initialsumView = initialSumView;
+        this.initialSumView = initialSumView;
     }
 
     public void setTotalScoreView(TextView totalScoreView){
@@ -45,8 +44,8 @@ public class Player {
         this.totalScore = totalScore;
     }
 
-    public TextView getInitialsumView(){
-        return this.initialsumView;
+    public TextView getInitialSumView(){
+        return this.initialSumView;
     }
 
     public TextView getBonusView(){
@@ -66,11 +65,11 @@ public class Player {
     }
 
     public ArrayList<ScoreButton> getAllScoreButtons(){
-        return this.allscoreButtons;
+        return this.allScoreButtons;
 }
 
     public void addScoreButton(Button scoreButton, ScoreCategory category){
-        this.allscoreButtons.add(new ScoreButton(scoreButton, category));
+        this.allScoreButtons.add(new ScoreButton(scoreButton, category));
     }
 
     public ScoreValues getScoreValues(){
@@ -83,14 +82,14 @@ public class Player {
         HashMap<ScoreCategory, Integer> categoryIntegerHashMap = this.scoreValues.getCategoryToValueMap();
         this.assignTotalScores();
 
-        for(ScoreButton b: this.allscoreButtons) {
+        for(ScoreButton b: this.allScoreButtons) {
             ScoreCategory category = b.getCategory();
             if(categoryIntegerHashMap.containsKey(category)) {
                 b.getButton().setText(categoryIntegerHashMap.get(category).toString());
             }
         }
 
-        this.initialsumView.setText(scoreValues.getInitialSum().toString());
+        this.initialSumView.setText(scoreValues.getInitialSum().toString());
         this.bonusView.setText(scoreValues.getBonusScore().toString());
         this.totalScoreView.setText(scoreValues.getTotalScore().toString());
     }
@@ -109,7 +108,7 @@ public class Player {
 
 
     public void assignScoreButtonsToScoreValues(){
-        this.scoreValues.setAllScoreButtons(this.allscoreButtons);
+        this.scoreValues.setAllScoreButtons(this.allScoreButtons);
     }
 
 

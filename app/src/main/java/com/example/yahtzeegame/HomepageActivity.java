@@ -8,22 +8,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.yahtzeegame.backend.*;
 
-import java.util.ArrayList;
-
-public class homepageactivity extends AppCompatActivity
+public class HomepageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ArrayList<Button> diceButtons;
     private Button roll;
     private Game game = new Game();
     private String selectedButton;
@@ -170,12 +165,13 @@ public class homepageactivity extends AppCompatActivity
             }
         });
 
-
         View.OnClickListener diceSlection = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!game.getDice((Button)v).isSelected()) {
                     game.getDice((Button)v).selectDice();
+                }else{
+                    game.getDice((Button)v).deselectDice();
                 }
             }
         };
@@ -186,8 +182,6 @@ public class homepageactivity extends AppCompatActivity
         dice4.setOnClickListener(diceSlection);
         dice5.setOnClickListener(diceSlection);
 
-//        game.setInitialPlayer();
-
         View.OnClickListener ScoreButtonSelected = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -197,6 +191,10 @@ public class homepageactivity extends AppCompatActivity
                 game.getCurrntScoreButton((Button)v).markScored();
                 game.switchPlayer();
                 roll.setEnabled(true);
+                if (game.checkGameOver()){
+                    displayToast("Game Over!!!");
+                    roll.setEnabled(false);
+                }
             }
         };
 
@@ -353,12 +351,6 @@ public class homepageactivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 

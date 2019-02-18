@@ -2,17 +2,15 @@ package com.example.yahtzeegame.backend;
 
 import android.widget.Button;
 
-import java.util.HashSet;
-
 public class ScoreButton {
     private ScoreCategory category;
     private Button button;
     private int value;
     private boolean isScored;
 
-    public ScoreButton(Button scorebutton, ScoreCategory category){
+    public ScoreButton(Button scoreButton, ScoreCategory category){
         this.category = category;
-        this.button = scorebutton;
+        this.button = scoreButton;
         this.value = 0;
         this.isScored = false;
     }

@@ -1,6 +1,5 @@
 package com.example.yahtzeegame.backend;
 
-import android.graphics.Color;
 import android.util.Log;
 import android.widget.Button;
 
@@ -22,7 +21,6 @@ public class Dice {
 
     public void Roll(){
         this.value = (int )(Math. random() * 6 + 1);
-        Log.i("Dice", "Rolled a " + this.value);
         this.buttonDice.setText(Integer.toString(this.value));
     }
     public int getValue(){
@@ -32,6 +30,11 @@ public class Dice {
     public void selectDice(){
         this.buttonDice.setBackgroundColor(0xff99cc00);
         this.selected = true;
+    }
+
+    public void deselectDice(){
+        this.buttonDice.setBackgroundColor(0xFFFFFFFF);
+        this.selected = false;
     }
 
     public void resetDice(){

@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".OpenAppActivity"></activity>
         <activity
-            android:name=".homepageactivity"
+            android:name=".HomepageActivity"
             android:label="@string/title_activity_homepageactivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
