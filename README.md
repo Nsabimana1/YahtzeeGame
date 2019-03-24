@@ -1,3 +1,2 @@
 # YahtzeeGame
-Java Version of Yahtzee Game
-Androip Application for the Game Yahtzee
+Java Version of an androip application for the Game Yahtzee
